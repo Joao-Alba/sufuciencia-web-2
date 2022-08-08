@@ -14,9 +14,15 @@ public class Comanda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Usuario usuario;
+    @Column(nullable = false)
+    private Long idUsuario;
 
-    @ManyToMany
-    private List<Produto> produtoList;
+    @Column(nullable = false)
+    private String nomeUsuario;
+
+    @Column(nullable = false)
+    private String telefoneUsuario;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Produto> produtos;
 }
