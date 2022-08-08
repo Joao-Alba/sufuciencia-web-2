@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     @Override
-    protected AuthenticationManager authenticationManager() throws Exception{
+    protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
 
@@ -32,16 +32,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs",
-                "/configuration/ui",
-                "/configuration/security",
-                "/swagger-ui.html"
+        web.ignoring().antMatchers("/swagger-resources/**",
+                "/v2/api-docs",
+                "/swagger-ui/index.html",
+                "/RestAPIFurb"
         );
     }
 }
