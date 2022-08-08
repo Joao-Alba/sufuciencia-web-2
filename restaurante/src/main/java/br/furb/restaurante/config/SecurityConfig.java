@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/swagger-resources/**",
                 "/v2/api-docs",
                 "/swagger-ui/index.html",
-                "/RestAPIFurb"
+                "/RestAPIFurb/comandas"
         );
     }
 }
